@@ -61,7 +61,7 @@ export class RegisterFormComponent implements OnDestroy {
         .subscribe((u: User[]): void => {
           if (u.length === 0) {
             this.store.dispatch(UsersActions.addUser({ user }));
-            this.alert.emit('app.user-exists');
+            this.alert.emit('app.user-registered');
           } else {
             this.userExists = true;
           }

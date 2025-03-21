@@ -20,6 +20,7 @@
   "app.your-goods": "Your Goods",
   "app.ask": "Ask ?",
 
+  "app.user-registered": "User is registered", 
   "app.user-exists": "User with this email already exists",
   "app.user-no-exists": "User not exists",
   "app.password-incorrect": "Incorrect password",

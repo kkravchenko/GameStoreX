@@ -19,6 +19,8 @@
   "app.amount": "Всього",
   "app.your-goods": "Ваши Товари",
   "app.ask": "Спитати ?",
+  "app.user-registered": "Користувача зареєстровано",
+
   "app.user-exists": "Користувач з таким  email вже існує",
   "app.user-no-exists": "Користувача не знайдено",
   "app.password-incorrect": "Не вірний пароль",
