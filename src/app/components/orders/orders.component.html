@@ -1,0 +1,14 @@
+<section id="orders">
+  <h1>
+    <a
+      [routerLink]="['/']"
+      routerLinkActive="router-link-active"
+      class="icon"
+    ></a>
+    <span>{{ "app.orders" | translate }}</span>
+  </h1>
+  <div class="orders-list">
+    @for (order of orders; track $index) {
+    <app-order-card [order]="order" [currency]="currency"></app-order-card> }
+  </div>
+</section>

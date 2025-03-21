@@ -1,0 +1,14 @@
+input {
+  background-color: #111419;
+  padding: 12px;
+  border-radius: 16px;
+  height: 22px;
+  outline: none;
+  border: 1px solid #20242c;
+  width: calc(100% - 24px);
+  color: #fff;
+
+  &::placeholder {
+    color: #818385;
+  }
+}

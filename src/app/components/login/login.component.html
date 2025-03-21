@@ -1,0 +1,42 @@
+@if (alertText) {
+<app-alert [text]="alertText"></app-alert>
+}
+<div class="login">
+  <div class="login-buttons">
+    <div class="login-tab" #tabsContainer>
+      <button
+        type="button"
+        class="tab"
+        [class.active]="activeTab === 0"
+        (click)="selectTab(0, $event)"
+      >
+        {{ "app.login" | translate }}
+      </button>
+      <button
+        type="button"
+        class="tab"
+        [class.active]="activeTab === 1"
+        (click)="selectTab(1, $event)"
+      >
+        {{ "app.registration" | translate }}
+      </button>
+
+      <div
+        class="login-tab-indicator"
+        [style.transform]="indicatorTransform"
+      ></div>
+    </div>
+    <button type="button" class="close" (click)="handleCloseForm()"></button>
+  </div>
+  <div class="login-content" [@slideAnimation]="direction">
+    @if (activeTab == 0) {
+    <div class="login-content-tab" @tabAnimation>
+      <app-login-form (alert)="onAlert($event)"></app-login-form>
+    </div>
+    } @else {
+    <div class="login-content-tab" @tabAnimation>
+      <app-register-form (alert)="onAlert($event)"></app-register-form>
+    </div>
+    }
+  </div>
+</div>

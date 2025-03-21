@@ -1,0 +1,47 @@
+<div class="login-form" [formGroup]="formLogin">
+  <div class="login-form-control">
+    <div>
+      <app-input
+        formControlName="email"
+        placeholder="{{ 'app.email-or-mobile' | translate }}"
+      ></app-input>
+      @if(!formLogin.controls.email.valid && formLogin.controls.email.touched) {
+      <div class="error">{{ "app.error" | translate }}</div>
+      } @if (userExists) {
+      <div class="error">{{ "app.user-exists" | translate }}</div>
+      }
+    </div>
+    <div>
+      <app-input
+        formControlName="password"
+        type="password"
+        placeholder="{{ 'app.password' | translate }}"
+      ></app-input>
+      @if(!formLogin.controls.password.valid &&
+      formLogin.controls.password.touched) {
+      <div class="error">{{ "app.password-error" | translate }}</div>
+      }
+    </div>
+    <div>
+      <app-input
+        formControlName="confirm"
+        type="password"
+        placeholder="{{ 'app.password-confirm' | translate }}"
+      ></app-input>
+      @if(formLogin.hasError('passwordMismatch') &&
+      formLogin.get('confirm')?.touched) {
+      <div class="error">{{ "app.password-confirm-error" | translate }}</div>
+      }
+    </div>
+  </div>
+  <app-checkbox
+    [text]="'app.use-social' | translate"
+    [checked]="this.formLogin.get(['social'])?.value.target?.checked"
+    formControlName="social"
+  ></app-checkbox>
+  <app-button
+    [text]="'app.login' | translate"
+    (clickButton)="handleSubmit()"
+  ></app-button>
+  <app-social-login></app-social-login>
+</div>

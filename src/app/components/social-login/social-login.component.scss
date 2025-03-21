@@ -1,0 +1,41 @@
+.login-social {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  align-items: center;
+
+  &-text {
+    color: #fff;
+  }
+  &-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+
+    span {
+      width: 32px;
+      height: 32px;
+
+      &.google {
+        background: url(/assets/images/google.svg) center center/contain
+          no-repeat;
+      }
+      &.apple {
+        background: url(/assets/images/apple.svg) center center/contain
+          no-repeat;
+      }
+      &.facebook {
+        background: url(/assets/images/facebook.svg) center center/contain
+          no-repeat;
+      }
+      &.discord {
+        background: url(/assets/images/discord.svg) center center/contain
+          no-repeat;
+      }
+      &.twitter {
+        background: url(/assets/images/twitter.svg) center center/contain
+          no-repeat;
+      }
+    }
+  }
+}

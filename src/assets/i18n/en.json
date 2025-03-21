@@ -1,0 +1,28 @@
+{
+  "app.registration": "Registration",
+  "app.login": "Login",
+  "app.orders": "Orders",
+  "app.email": "Email",
+  "app.email-or-mobile": "Email or Mobile",
+  "app.password": "Password",
+  "app.forgot-password": "Forgot password ?",
+  "app.password-confirm": "Confirm Password",
+  "app.error": "Input correct value",
+  "app.password-error": "Password must be at least 6 symbols",
+  "app.password-confirm-error": "Passwords do not match",
+  "app.use-social": "Use social networks",
+  "app.transaction-id": "Transaction ID",
+  "app.date": "Date",
+  "app.status": "Status",
+  "app.game-name": "Game Name",
+  "app.game-id": "Game ID",
+  "app.amount": "Ammount",
+  "app.your-goods": "Your Goods",
+  "app.ask": "Ask ?",
+
+  "app.user-exists": "User with this email already exists",
+  "app.user-no-exists": "User not exists",
+  "app.password-incorrect": "Incorrect password",
+  "app.user-auth-success": "User is logged in",
+  "app.logout": "Logout"
+}

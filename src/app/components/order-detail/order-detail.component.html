@@ -1,0 +1,17 @@
+<section id="orders">
+  <h1>
+    <a
+      [routerLink]="['/orders']"
+      routerLinkActive="router-link-active"
+      class="icon"
+    ></a>
+    <span>#{{ order?.transactionId }}</span>
+  </h1>
+  <div class="orders-detail">
+    <app-order-card
+      [order]="order"
+      [currency]="currency"
+      [detail]="true"
+    ></app-order-card>
+  </div>
+</section>

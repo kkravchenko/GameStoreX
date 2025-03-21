@@ -1,0 +1,25 @@
+#orders {
+  margin: 12px 13px;
+  h1 {
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .icon {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background: url(/assets/images/close.svg) left center/contain no-repeat;
+    }
+  }
+
+  .orders-detail {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    padding: 12px 0;
+  }
+}

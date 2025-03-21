@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "USD",
+    "symbol": "$",
+    "rate": 1,
+    "icon": "/assets/images/currency.svg"
+  },
+  {
+    "id": 2,
+    "name": "UAH",
+    "symbol": "₴",
+    "rate": 41.5,
+    "icon": "/assets/images/currency.svg"
+  },
+  {
+    "id": 3,
+    "name": "EUR",
+    "symbol": "€",
+    "rate": 0.97,
+    "icon": "/assets/images/currency.svg"
+  }
+]

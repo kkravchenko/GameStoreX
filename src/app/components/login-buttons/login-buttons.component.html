@@ -1,0 +1,24 @@
+<div class="buttons">
+  <div class="buttons-login">
+    @if (userEmail) {
+    <div class="user">{{ userEmail }}</div>
+    <app-button
+      text="{{ 'app.logout' | translate }}"
+      (clickButton)="onCLickLogoutButton()"
+    ></app-button>
+    } @else {
+    <app-button
+      text="{{ 'app.registration' | translate }}"
+      (clickButton)="onClickRegisterButton()"
+    ></app-button>
+    <app-button
+      text="{{ 'app.login' | translate }}"
+      (clickButton)="onClickLoginButton()"
+    ></app-button>
+    }
+  </div>
+  <app-order-button
+    text="{{ 'app.orders' | translate }}"
+    (clickButton)="onClickOrdersButton()"
+  ></app-order-button>
+</div>

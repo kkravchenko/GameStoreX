@@ -1,0 +1,20 @@
+header {
+  padding: 12px 13px;
+  display: grid;
+  grid-template-columns: 80px 183px;
+  gap: 41px;
+
+  .multi-wrapper {
+    display: grid;
+    grid-template-columns: 64px 65px 28px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3.5px;
+
+    app-lang-switcher {
+      display: flex;
+      gap: 3.5px;
+      align-items: center;
+    }
+  }
+}

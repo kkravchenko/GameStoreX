@@ -1,0 +1,4 @@
+<div *ngIf="isLogin" @fadeInAnimation class="login-container">
+  <app-login [tab]="formIndex" (closeForm)="isLogin = !isLogin"></app-login>
+</div>
+<app-login-buttons (clickLogin)="onLogin($event)"></app-login-buttons>

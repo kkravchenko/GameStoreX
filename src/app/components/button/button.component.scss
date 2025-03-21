@@ -1,0 +1,13 @@
+.button {
+  width: 264px;
+  height: 44px;
+  border: 0;
+  outline: none;
+  border-radius: 20px;
+  padding: 12px;
+  background-color: #fff;
+
+  &.full {
+    width: 100% !important;
+  }
+}

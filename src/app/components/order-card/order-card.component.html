@@ -1,0 +1,98 @@
+<ng-template #orderTemplate let-order="order" let-currency="currency">
+  <div class="order-row">
+    <div class="order-row-cell">
+      <span class="order-row-head">{{ "app.transaction-id" | translate }}</span>
+      <span class="order-row-value">#{{ order.transactionId }}</span>
+    </div>
+    <div class="order-row-cell">
+      <span class="order-row-head">{{ "app.date" | translate }}</span>
+      <span class="order-row-value">{{ order.date }}</span>
+    </div>
+    <div class="order-row-cell">
+      <span class="order-row-head">{{ "app.status" | translate }}</span>
+      <span class="order-row-value status">{{ order.status }}</span>
+    </div>
+  </div>
+  <div class="order-hr"></div>
+  <div class="order-row">
+    <div class="order-row-cell">
+      <span class="order-row-head">{{ "app.game-name" | translate }}</span>
+      <span class="order-row-value">{{ order.game_name }}</span>
+    </div>
+    <div class="order-row-cell">
+      <span class="order-row-head">{{ "app.game-id" | translate }}</span>
+      <span class="order-row-value">{{ order.gameId }}</span>
+    </div>
+    <div class="order-row-cell">
+      <span class="order-row-head">{{ "app.amount" | translate }}</span>
+      <span class="order-row-value"
+        >{{ currency?.symbol
+        }}{{
+          (currency ? order.amount * currency.rate : order.amount) | ceil
+        }}</span
+      >
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #orderTemplateDetail let-order="order" let-currency="currency">
+  <div class="order-goods">
+    <div class="order-goods-text">{{ "app.your-goods" | translate }}:</div>
+    <div class="order-goods-value">
+      <span>1</span>
+      <span>-</span>
+      <span>
+        {{
+          (currency ? order?.your_goods * currency.rate : order?.your_goods)
+            | ceil
+        }}{{ currency?.symbol }}
+      </span>
+    </div>
+  </div>
+  <div class="order">
+    <div class="order-rate">
+      <div class="order-rate-earn">
+        <span class="order-rate-earn-total">{{ order.total | round : 3 }}</span>
+        <span class="order-rate-earn-plus">+{{ order.earn | round : 3 }}</span>
+      </div>
+      <div class="order-rate-balance">
+        <span class="order-rate-balance-total"
+          >{{
+            (currency ? order?.your_goods * currency.rate : order?.your_goods)
+              | ceil
+          }}{{ currency?.symbol }}</span
+        >
+        <span class="order-rate-balance-old"
+          >{{
+            (currency ? order?.old_goods * currency.rate : order?.old_goods)
+              | ceil
+          }}{{ currency?.symbol }}</span
+        >
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+@if (order && !detail) {
+<a
+  [routerLink]="['/orders', order.id]"
+  routerLinkActive="router-link-active"
+  class="order"
+>
+  <ng-container
+    *ngTemplateOutlet="orderTemplate; context: { order, currency }"
+  ></ng-container>
+</a>
+} @if (detail && order) {
+<div class="order">
+  <ng-container
+    *ngTemplateOutlet="orderTemplate; context: { order, currency }"
+  ></ng-container>
+</div>
+<ng-container
+  *ngTemplateOutlet="orderTemplateDetail; context: { order, currency }"
+></ng-container>
+<div class="order-button">
+  <app-button [text]="'app.ask' | translate" width="full"></app-button>
+</div>
+}

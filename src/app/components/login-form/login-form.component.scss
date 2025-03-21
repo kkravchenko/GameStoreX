@@ -1,0 +1,16 @@
+.login-form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  &-control {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+  }
+
+  &-forgot_password {
+    text-align: center;
+    text-decoration: underline;
+    color: #898b8f;
+  }
+}

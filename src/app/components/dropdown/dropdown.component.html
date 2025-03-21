@@ -1,0 +1,22 @@
+<div class="dropdown" (outsideClick)="onOutsideClick()">
+  <div class="dropdown-selected-element" (click)="toggleMenu()">
+    @if (selectedElement) {
+    <img [src]="selectedElement.Icon" [alt]="selectedElement.Name" />
+    @if (!noList) {
+    <div class="dropdown-element-name">{{ selectedElement.Name }}</div>
+    } }
+  </div>
+  @if (!noList) {
+  <ul class="dropdown-list" [@toggleMenu]="isOpen ? 'open' : 'closed'">
+    @for (item of dropDownList; track $index) {
+    <li
+      (click)="handelElementOnClick(item.id)"
+      [class.active]="item.id === selectedElement?.id"
+    >
+      <img [src]="item.Icon" [alt]="item.Name" />
+      <span class="dropdown-element-name">{{ item.Name }}</span>
+    </li>
+    }
+  </ul>
+  }
+</div>

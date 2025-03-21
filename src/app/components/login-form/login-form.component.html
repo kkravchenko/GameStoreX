@@ -1,0 +1,36 @@
+<div class="login-form">
+  <div class="login-form-control" [formGroup]="formLogin">
+    <div>
+      <app-input
+        formControlName="email"
+        placeholder="{{ 'app.email' | translate }}"
+      ></app-input>
+      @if(!formLogin.controls.email.valid && formLogin.controls.email.touched) {
+      <div class="error">{{ "app.error" | translate }}</div>
+      } @if (userNotExists) {
+      <div class="error">{{ "app.user-no-exists" | translate }}</div>
+      }
+    </div>
+    <div>
+      <app-input
+        formControlName="password"
+        type="password"
+        placeholder="{{ 'app.password' | translate }}"
+      ></app-input>
+      @if(!formLogin.controls.password.valid &&
+      formLogin.controls.password.touched) {
+      <div class="error">{{ "app.password-error" | translate }}</div>
+      } @if (passwordError) {
+      <div class="error">{{ "app.password-incorrect" | translate }}</div>
+      }
+    </div>
+  </div>
+  <app-button
+    [text]="'app.login' | translate"
+    (clickButton)="handleSubmit()"
+  ></app-button>
+  <app-social-login></app-social-login>
+  <div class="login-form-forgot_password">
+    {{ "app.forgot-password" | translate }}
+  </div>
+</div>

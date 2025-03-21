@@ -1,0 +1,126 @@
+.order {
+  padding: 12px 16px;
+  border-radius: 16px;
+  background-color: hsl(217, 17%, 15%);
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+
+  &-goods {
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: 75% 25%;
+    padding: 12px 0;
+
+    &-text {
+      color: #fff;
+      font-size: 15px;
+    }
+
+    &-value {
+      color: #fff;
+      font-size: 17px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: right;
+      gap: 8px;
+    }
+  }
+
+  &-row {
+    display: grid;
+    grid-template-columns: repeat(3, 33.3%);
+    gap: 4px;
+
+    &-cell {
+      display: flex;
+      flex-direction: column;
+      row-gap: 4;
+
+      .status {
+        position: relative;
+        padding-left: 16px;
+
+        &::after {
+          position: absolute;
+          content: "";
+          width: 12px;
+          height: 12px;
+          background-color: #11b174;
+          border-radius: 50%;
+          left: 0;
+          top: 1px;
+        }
+      }
+    }
+
+    &-head {
+      font-size: 10px;
+      color: #818589;
+    }
+
+    &-value {
+      color: #fff;
+    }
+  }
+
+  &-hr {
+    height: 1px;
+    background-color: #353941;
+    margin: 6.5px 0;
+  }
+
+  &-rate {
+    display: flex;
+    flex-direction: column;
+    padding-left: 82px;
+    justify-content: center;
+    gap: 8px;
+    height: 88px;
+    color: #fff;
+
+    &-earn {
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      gap: 8px;
+
+      &-total {
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      &-plus {
+        display: block;
+        border-radius: 24px;
+        padding: 8px;
+        background-color: #3b3f46;
+        font-weight: 700;
+      }
+    }
+
+    &-balance {
+      display: flex;
+      align-items: baseline;
+      justify-content: left;
+      gap: 4px;
+      color: #fff;
+
+      &-total {
+        font-weight: 700;
+        font-size: 14px;
+      }
+
+      &-old {
+        font-weight: 700;
+        text-decoration: line-through;
+        color: #909296;
+      }
+    }
+  }
+}
+
+.order-button {
+  margin-top: 10px;
+}
