@@ -59,13 +59,13 @@ export class DropdownComponent implements OnChanges {
     if (this.prevChanges !== changes) {
       this.prevChanges = changes;
 
-      if (this.selected) {
-        const index: number = this.dropDownList.findIndex(
-          (d: Dropdown) => d.id === this.selected
-        );
-        if (index !== -1) {
-          this.selectedElement = this.dropDownList[index];
-        }
+      if (!this.selected) this.selected = 1;
+
+      const index: number = this.dropDownList.findIndex(
+        (d: Dropdown) => d.id === this.selected
+      );
+      if (index !== -1) {
+        this.selectedElement = this.dropDownList[index];
       }
     }
   }
