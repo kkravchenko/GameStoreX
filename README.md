@@ -10,10 +10,10 @@ Run on Angular 19, ngrx store
 
 ## Run
 
-npm i
+npm i  
 ng serve
 
 ## Run in docker container
 
-docker build -t gamestore .
+docker build -t gamestore .  
 docker run -p 8080:80 gamestore
